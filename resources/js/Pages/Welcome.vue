@@ -71,7 +71,7 @@ const submit = () => {
                     autocomplete="address"
                 />
 
-                <InputError class="mt-2" :message="form.errors.email[0]" />
+                <InputError class="mt-2" :message="form.errors.email" />
             </div>
 
 
