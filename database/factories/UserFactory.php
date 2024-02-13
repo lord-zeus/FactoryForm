@@ -41,4 +41,11 @@ class UserFactory extends Factory
             'email_verified_at' => null,
         ]);
     }
+
+    public function save(): static
+    {
+        return $this->state([
+            'location' => 'Online'
+        ]);
+    }
 }

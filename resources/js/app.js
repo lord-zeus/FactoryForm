@@ -1,5 +1,7 @@
 import './bootstrap';
 import '../css/app.css';
+import router from './router/index.js'
+import {store} from './store/index.js'
 
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
@@ -10,10 +12,12 @@ const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
-    resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
+    resolve: (name) => resolvePageComponent(`./App.vue`, import.meta.glob('./App.vue')),
     setup({ el, App, props, plugin }) {
         return createApp({ render: () => h(App, props) })
             .use(plugin)
+            .use(router)
+            .use(store)
             .use(ZiggyVue)
             .mount(el);
     },
