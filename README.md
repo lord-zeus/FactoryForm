@@ -25,5 +25,8 @@ php artisan migrate:fresh
 # Run npm
 npm run dev
 
-# Run Application
+# Сгенерируйте ключ приложения
+php artisan key:generate
+
+# Запустить приложение
 php artisan serve
